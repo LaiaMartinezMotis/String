@@ -1,24 +1,61 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef STRING_H
+#define STRING_H
 
+using namespace std;
 
 class String {
 public:
-	const char* a;
-	
+	const char* name;
+	//La clas he de incluir:
+	/*
+
+	string ("hello");
+	string b(a);
+
+	if(a=="")->tru;
+	b="bye";
+
+	*/
 public:
-	String() {};//Constructor Vacio
-	String(const char* a ): a(a) {};//Constructor al que se le pasa una palabra
-	String(const String& str) : a(str.a) {};//Constructor al que se le pasa un string
-	//
-	String operator=(const String& str) {
-		return a = str.a; //Operador que te permet cambiar
+	String() {}; //Constructor Vacio
+
+	//Constructor que retorna el string
+	String(const char* name) : name(name) {}; //(char* name);
+
+	String(const String& s) : name(s.name) {}; //(s(name))
+
+
+	String operator =(const String& s) {
+		return (this->name = s.name);
+	};
+
+	/*String operator =(const char& w) {
+		return name=(char*)w;
+	};*/
+
+	bool operator ==(const String& s) {
+		return(this->name == s.name);
 	}
 
+	bool operator==(const char& w) {
+		return(this->name == (char*)w);
+	}
+
+	/*bool checkString() {
+		if (this->name == nullptr) return true;
+	}*/
+
+	bool checkString() {
+		if (this->name == nullptr)return true;
+		else return false;
+	}
+	void getName() const {
+		printf("String = %s\n", this->name);
+	}
 };
 
 
 
 
 
-#endif HEADER_H
+#endif STRING_H

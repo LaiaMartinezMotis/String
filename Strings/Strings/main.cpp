@@ -1,18 +1,24 @@
 #include <iostream>
-#include "Header.h"
+#include "String.h"
+#include <stdio.h>
+
 
 using namespace std;
+
 int main() {
 
-	String one("hello");
-	String two(one);
-	cout << one.a << endl;
-	cout << two.a << endl;
-	
-	one = "bye";
-	cout << one.a << endl;
+	String string;
+
+	String string1("hello");
+
+	String string2(string1);
 
 
+	cout << "String Class: " << endl;
+
+	string.getName();
+	string1.getName();
+	string2.getName();
 
 
 
@@ -22,4 +28,3 @@ int main() {
 	system("pause");
 	return 0;
 }
-
